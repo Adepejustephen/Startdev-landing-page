@@ -1,0 +1,131 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+  padding: 1rem 2rem;
+  width: 100%;
+  position: relative;
+
+
+
+  nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 900;
+
+    visibility: hidden;
+
+    &.change {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      height: 90vh;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-color: $primary-text-color;
+      background-color: rgba($color: #000000, $alpha: 0.8);
+      padding-right: 1rem;
+      transform: translateY(-100%);
+      @include transition-ease;
+
+      &.change {
+        transform: translateY(0);
+      }
+
+      li {
+        padding: 1rem 0;
+        display: inline-block;
+        cursor: pointer;
+        @include transition-ease;
+        transform: translateX(100vw);
+
+        &.change {
+          transform: translateX(0);
+        }
+
+        a {
+          color: #f7f7f7;
+          font-weight: 300;
+          font-size: 1.2rem;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  .menu-btn {
+    cursor: pointer;
+
+    .hamburger {
+      width: 22px;
+      height: 3px;
+      background-color: #000000;
+      z-index: 2;
+      position: relative;
+      @include transition-ease;
+      z-index: 900;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 0;
+        width: 25px;
+        height: 3px;
+        background-color: #000000;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 18px;
+        height: 3px;
+        background-color: #000000;
+      }
+      &.change {
+        transform: rotate(1080deg);
+        background-color: transparent;
+
+        &::before {
+          transform: rotate(45deg) translate(5px, 8px);
+          background-color: #f7f7f7;
+        }
+        &::after {
+          width: 25px;
+          transform: rotate(-45deg) translate(3px, -7px);
+          background-color: #f7f7f7;
+        }
+      }
+    }
+  }
+}
+
+  .logo {
+    font-size: 1.1rem;
+    color: $logo-color;
+    font-weight: 900; 
+
+    span {
+      color: $buttons-color;
+      font-size: 1.6rem;
+      padding: 2px;
+    }
+  }
+
+
+@for $i from 1 to 5 {
+  .nav-menu li:nth-child(#{$i}) {
+    transition-delay: ($i * 0.15s) + 0.15s;
+  }
+}

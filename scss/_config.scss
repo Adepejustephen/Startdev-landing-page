@@ -1,0 +1,56 @@
+$primary-text-color: #272727;
+$text-secondary-color: #5870cf;
+$logo-color: #023e73;
+$buttons-color: #d90467;
+$font-weights: (
+    "regular": 400,
+    "light": 500,
+    "bold": 700,
+    "bolder": 900,
+
+);
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+@mixin  transition-ease {
+    transition: all .5s ease-in-out;
+}
+
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin gridCenter ($colums) {
+    display: grid;
+    grid-template-columns: $colums;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin displayFlex ($colum) {
+    display: flex;
+    flex-direction: $colum;
+    justify-content: center;
+    align-items: center;
+}
