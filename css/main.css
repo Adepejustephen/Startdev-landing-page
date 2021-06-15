@@ -559,7 +559,7 @@ main {
   height: 400px;
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
           box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  background: url(../images/xps-YNliXm_hMn8-unsplash.jpg) center;
+  background: url(./images/xps-YNliXm_hMn8-unsplash.jpg) center;
   background-size: cover;
 }
 
